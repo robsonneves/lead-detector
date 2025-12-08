@@ -7,6 +7,7 @@ data class GooglePlacesResponse(
 
 data class PlaceResult(
     val name: String?,
+    val place_id: String?,
     val rating: Double?,
     val user_ratings_total: Int?,
     val formatted_address: String?,

@@ -1,11 +1,7 @@
 package br.com.lead_detector.lead_detector.extension
 
 import br.com.lead_detector.lead_detector.controller.response.SearchCustomerResponse
-import br.com.lead_detector.lead_detector.feign.response.Geometry
 import br.com.lead_detector.lead_detector.model.SearchCustomerModel
-import br.com.lead_detector.lead_detector.model.enum.LeadPriorityEnum
-import br.com.lead_detector.lead_detector.model.enum.QualificationEnum
-import kotlin.String
 
 fun SearchCustomerModel.toSearchCustomerResponse(): SearchCustomerResponse{
     return SearchCustomerResponse(
