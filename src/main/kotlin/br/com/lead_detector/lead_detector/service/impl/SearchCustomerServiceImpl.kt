@@ -19,6 +19,10 @@ class SearchCustomerServiceImpl(
         return sortPriority(listGoogleResult.results)
     }
 
+    override fun getDetailsCustomer(placeId: String, fields: String): Any {
+        return googlePlacesService.getDetailsClient(placeId, fields)
+    }
+
     private fun sortPriority(listPlaceResult: List<PlaceResult>): List<SearchCustomerModel>{
 
         var listSearchCustomerModel = ArrayList<SearchCustomerModel>();
@@ -29,6 +33,7 @@ class SearchCustomerServiceImpl(
 
             listSearchCustomerModel.add(
                 SearchCustomerModel(
+                    placeId = place.place_id,
                     name = place.name,
                     rating = rating,
                     user_ratings_total = totalRatings,

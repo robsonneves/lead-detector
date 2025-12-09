@@ -14,10 +14,13 @@ class SearchCustomerController(
     private val searchService: SearchCustomerService
 ) {
 
-
     @GetMapping
     fun getSearchCustomers(@RequestParam niche: String, @RequestParam location: String): List<SearchCustomerResponse> {
         return searchService.getSearchCustomers(niche, location).map { it.toSearchCustomerResponse() }
     }
 
+    @GetMapping("/details")
+    fun getDetailsCustomer(@RequestParam placeId: String, @RequestParam fields: String): Any {
+        return searchService.getDetailsCustomer(placeId, fields)
+    }
 }

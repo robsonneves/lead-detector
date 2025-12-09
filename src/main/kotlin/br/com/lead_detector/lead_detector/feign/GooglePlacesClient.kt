@@ -16,4 +16,11 @@ interface GooglePlacesClient {
         @RequestParam query: String,
         @RequestParam("key") apiKey: String
     ): GooglePlacesResponse
+
+    @GetMapping("/details/json")
+    fun getDetailsClient(
+        @RequestParam("place_id") placeId: String,
+        @RequestParam("fields") fields: String, // ex: "name,website,formatted_phone_number"
+        @RequestParam("key") apiKey: String
+    ): Any //PlaceDetailsResponse
 }

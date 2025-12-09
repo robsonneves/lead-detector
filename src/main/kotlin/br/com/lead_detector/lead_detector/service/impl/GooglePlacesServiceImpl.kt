@@ -16,4 +16,8 @@ class GooglePlacesServiceImpl(
         val query = "$nicho em $cidade"
         return googlePlacesClient.searchPlaces(query, properties.apiKey)
     }
+
+    override fun getDetailsClient(placeId: String, fields: String): Any {
+        return googlePlacesClient.getDetailsClient(placeId, fields, properties.apiKey)
+    }
 }

@@ -5,6 +5,7 @@ import br.com.lead_detector.lead_detector.model.SearchCustomerModel
 
 fun SearchCustomerModel.toSearchCustomerResponse(): SearchCustomerResponse{
     return SearchCustomerResponse(
+        placeId = this.placeId,
         name = this.name,
         rating = this.rating,
         user_ratings_total =  this.user_ratings_total,

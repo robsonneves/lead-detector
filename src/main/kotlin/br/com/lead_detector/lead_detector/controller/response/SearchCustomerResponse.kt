@@ -5,6 +5,7 @@ import br.com.lead_detector.lead_detector.model.enum.LeadPriorityEnum
 import br.com.lead_detector.lead_detector.model.enum.QualificationEnum
 
 data class SearchCustomerResponse(
+    val placeId: String?,
     val name: String?,
     val rating: Double?,
     val user_ratings_total: Int?,

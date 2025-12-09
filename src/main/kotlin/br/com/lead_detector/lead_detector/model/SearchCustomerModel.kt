@@ -5,6 +5,7 @@ import br.com.lead_detector.lead_detector.model.enum.LeadPriorityEnum
 import br.com.lead_detector.lead_detector.model.enum.QualificationEnum
 
 data class SearchCustomerModel (
+    var placeId: String?,
     var name: String?,
     var rating: Double?,
     var user_ratings_total: Int?,
