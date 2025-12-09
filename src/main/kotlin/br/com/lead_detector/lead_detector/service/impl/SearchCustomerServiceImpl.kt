@@ -2,6 +2,7 @@ package br.com.lead_detector.lead_detector.service.impl
 
 import br.com.lead_detector.lead_detector.feign.response.PlaceResult
 import br.com.lead_detector.lead_detector.model.SearchCustomerModel
+import br.com.lead_detector.lead_detector.model.enum.FieldsEnum
 import br.com.lead_detector.lead_detector.model.enum.LeadPriorityEnum
 import br.com.lead_detector.lead_detector.model.enum.QualificationEnum
 import br.com.lead_detector.lead_detector.service.GooglePlacesService
@@ -19,7 +20,7 @@ class SearchCustomerServiceImpl(
         return sortPriority(listGoogleResult.results)
     }
 
-    override fun getDetailsCustomer(placeId: String, fields: String): Any {
+    override fun getDetailsCustomer(placeId: String, fields: FieldsEnum): Any {
         return googlePlacesService.getDetailsClient(placeId, fields)
     }
 

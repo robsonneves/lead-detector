@@ -3,6 +3,7 @@ package br.com.lead_detector.lead_detector.service.impl
 import br.com.lead_detector.lead_detector.config.GooglePlacesProperties
 import br.com.lead_detector.lead_detector.feign.GooglePlacesClient
 import br.com.lead_detector.lead_detector.feign.response.GooglePlacesResponse
+import br.com.lead_detector.lead_detector.model.enum.FieldsEnum
 import br.com.lead_detector.lead_detector.service.GooglePlacesService
 import org.springframework.stereotype.Service
 
@@ -17,7 +18,7 @@ class GooglePlacesServiceImpl(
         return googlePlacesClient.searchPlaces(query, properties.apiKey)
     }
 
-    override fun getDetailsClient(placeId: String, fields: String): Any {
-        return googlePlacesClient.getDetailsClient(placeId, fields, properties.apiKey)
+    override fun getDetailsClient(placeId: String, fields: FieldsEnum): Any {
+        return googlePlacesClient.getDetailsClient(placeId, fields.key, properties.apiKey)
     }
 }
